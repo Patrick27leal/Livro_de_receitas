@@ -87,3 +87,14 @@ header{
     margin-right: auto;
     margin-top: 5%;
 }
+.box-receita{
+    width: 100%;
+    height: auto;
+}
+
+.box-tittle-receita{
+width: 100%;
+display: flex;
+justify-content: center;
+font-weight: bold;
+}
