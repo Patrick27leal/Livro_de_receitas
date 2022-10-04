@@ -109,12 +109,9 @@ border-bottom: 2px solid #ef4040;
 .box-image{
     width: 100%;
     text-align: center;
-    background-color: #ef4040;
-    background: linear-gradient(0deg, rgba(239,64,64,1) 1%, rgba(255,255,255,1) 51%, rgba(239,64,64,1) 85%);
 }
 .box-ingredientes{
 width: 100%;
-align-self: center;
 }
 .box-modopreparo{
 width: 96%;
@@ -122,9 +119,8 @@ align-self: center;
 margin: 0 2% 0 2%;
 }
 .img-receita{
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
 }
 .box-header-receita{
@@ -133,6 +129,25 @@ margin: 0 2% 0 2%;
     display: flex;
 }
 .box-ingredientes-tittle{
-width: 100%;
-text-align: center;
+    width: 100%;
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+.box-modopreparo-tittle{
+    width: 100%;
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+.footer-receita{
+    width: 100%;
+    display: flex;
+}
+.box-autor{
+    width: 50%;
+    padding: 2% 0 0.5% 2%;
+
+}
+.text-referencia{
+    color: #a8a8a8;
+    font-weight: 100;
 }
