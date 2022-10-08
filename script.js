@@ -9,20 +9,45 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const Container = document.querySelector(".container");
-function Exibir() {
+function splitSearch(search) {
+    return search.split(",");
+}
+function getData() {
     return __awaiter(this, void 0, void 0, function* () {
-        const IniciaRequisição = yield fetch(`https://receitas-server.vercel.app/api`);
-        const Response = yield IniciaRequisição.json();
-        const DadosReceita = JSON.parse(JSON.stringify(Response));
-        return DadosReceita;
+        const request = yield fetch('https://receitas-server.vercel.app/api');
+        const data = yield request.json();
+        return data;
     });
 }
-const RetornoConsulta = Exibir();
-/*  if (Container) {
-    RetornoConsulta.forEach((response) => {
-        Container.innerHTML += `
-        
-        `;
-
-    })
-} */ 
+function filterByIngredients(ingredient) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const data = yield getData();
+        const filteredData = data.filter((recipe) => {
+            const isMultiple = splitSearch(ingredient).length > 1;
+            if (!isMultiple) {
+                const ingredientIncludes = recipe.Ingredients.filter((recipeIngredient) => {
+                    return recipeIngredient.toLowerCase().includes(ingredient.toLowerCase());
+                });
+                return ingredientIncludes.length ? recipe : false;
+            }
+            if (isMultiple) {
+                let acumulator = [];
+                const searchValues = splitSearch(ingredient);
+                for (let i = 0; i < searchValues.length; i++) {
+                    for (let y = 0; y < recipe.Ingredients.length; y++) {
+                        if (recipe.Ingredients[y].includes(searchValues[i])) {
+                            if (acumulator.includes(searchValues[i])) {
+                                return false;
+                            }
+                            acumulator.push(searchValues[i]);
+                        }
+                    }
+                }
+                if (acumulator.length === searchValues.length)
+                    return true;
+            }
+        });
+        console.log(filteredData);
+    });
+}
+filterByIngredients('dark , egg');
