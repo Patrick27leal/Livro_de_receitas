@@ -1,4 +1,5 @@
 
+
 const Container = document.querySelector(".container");
 
 //const RadioSelect = document.querySelector('input[name="method_search"]:checked');
@@ -120,39 +121,3 @@ const BtnSearch = document.querySelector('.btn-search');
     }
     
      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*     async function filterByName(name: string){
-        const data = await getData();
-        const filteredData = data.filter((recipe: { Author: string; Description: string; Ingredients: string[]; Method: string[]; Name: string; url: string; urlImage: string}) => {
-            const isMultiple = name.length > 1;
-
-            if(!name) return data;
-
-            if(!isMultiple){
-                const ingredientIncludes = recipe.Name.includes(name);
-                console.log(ingredientIncludes);
-            };
-        });
-    } */
