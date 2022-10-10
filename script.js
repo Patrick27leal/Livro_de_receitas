@@ -9,6 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const Container = document.querySelector(".container");
+const BtnSearch = document.querySelector('.btn-search');
+const InputSearch = document.querySelector('.search');
+BtnSearch === null || BtnSearch === void 0 ? void 0 : BtnSearch.addEventListener("click", () => {
+    filterByIngredients(InputSearch.value);
+});
 function splitSearch(search) {
     return search.split(",");
 }
@@ -50,4 +55,3 @@ function filterByIngredients(ingredient) {
         console.log(filteredData);
     });
 }
-filterByIngredients('dark , egg');

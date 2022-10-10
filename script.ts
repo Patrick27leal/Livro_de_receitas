@@ -1,6 +1,20 @@
 
 const Container = document.querySelector(".container");
 
+
+
+const BtnSearch = document.querySelector('.btn-search');
+const InputSearch = document.querySelector('.search');
+
+(BtnSearch as HTMLButtonElement)?.addEventListener("click", () =>{
+    filterByIngredients((InputSearch as HTMLInputElement).value);
+})
+
+
+
+
+
+
 function splitSearch(search: string){
     return search.split(",");
 }
@@ -43,5 +57,3 @@ if(isMultiple){
     });
     console.log(filteredData);
  }
-
- filterByIngredients('dark , egg');
