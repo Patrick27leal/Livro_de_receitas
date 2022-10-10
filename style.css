@@ -80,7 +80,7 @@ header{
     color: #fff;
 }
 .container{
-    height: 8000px;
+    height: auto;
     width: 80%;
     background-color: #fff;
     margin-left: auto;
